@@ -64,3 +64,12 @@
 - 라이선스 확인된 실제 이미지와 출처·alt 기록 적용
 - production deployment, Search Console, AdSense 신청 전 최종 운영 점검
 - 실사용 데이터에 근거한 콘텐츠 확장
+
+## P6 — Cloudflare Production 배포
+
+- [x] `emfls/emfls-travel` 원격 확인 및 main 초기 commit/push
+- [x] Cloudflare Pages 프로젝트 `emfls-travel` 생성 — `npm run build` / `dist` / `main`
+- [x] `travel.emfls.com` custom domain 항목 및 CNAME 설정 요청
+- [ ] GitHub 연동 승인 후 Production deployment 생성
+- [ ] 실도메인 URL·404·Trip Finder·모바일 브라우저 검증
+- [ ] 배포 완료 후 production canonical·sitemap·robots 검증

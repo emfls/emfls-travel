@@ -44,6 +44,15 @@
 - `CONTENT_QA.md`에 PASS/FIXED/NEEDS_FUTURE_WORK 결과를 고정 기록했다. 실제 장소별 공식 출처, 라이선스 확인 사진, production 배포 후 메타·robots 확인, 브라우저 viewport/screenshot 검증은 P6 후보로 남겼다.
 - P5 후 정적 산출물은 editorial policy 1페이지가 추가되어 총 37페이지가 된다. 목적지는 8개, 세부 가이드는 12개로 유지한다.
 
+## 2026-09-14 — P6 Cloudflare Production 배포 준비
+
+- `git remote`와 GitHub API로 현재 저장소가 정확히 `emfls/emfls-travel`임을 확인했다. 다른 저장소는 수정하지 않았다.
+- 로컬 `npm run check`는 0 errors, 0 warnings, 0 hints로 통과했고 `npm run build`는 37페이지를 생성했다.
+- Cloudflare 계정에서 기존 프로젝트를 검색한 뒤 중복 생성이 없는 것을 확인하고, Pages 프로젝트 `emfls-travel`을 생성했다. GitHub source는 `emfls/emfls-travel`, production branch는 `main`, build command는 `npm run build`, output directory는 `dist`로 설정했다.
+- 현재 GitHub 연동 승인/웹훅이 완료되지 않아 Pages API의 latest deployment가 아직 null이며 `emfls-travel.pages.dev`는 522를 반환한다. 따라서 production 배포 완료나 실브라우저 동작 PASS를 주장하지 않는다.
+- `travel.emfls.com`을 해당 Pages 프로젝트에 추가했고, Cloudflare DNS zone `emfls.com`에 `travel` CNAME → `emfls-travel.pages.dev`를 추가했다. Pages 도메인 검증은 현재 `pending`이며 “CNAME record not set” 상태다.
+- P6의 실도메인 URL, 404, Trip Finder, 모바일, production metadata 검증은 deployment가 생성되고 custom domain 인증이 완료된 뒤 수행해야 한다. AdSense 신청, Search Console 등록, 신규 콘텐츠와 P7 작업은 시작하지 않았다.
+
 ## 2026-09-14 — P3 국내 목적지 클러스터 확장
 
 - 기존 충주·단양을 유지하고 제천(`jecheon`), 원주(`wonju`), 영월(`yeongwol`), 문경(`mungyeong`), 괴산(`goesan`), 안동(`andong`) 정확히 6개 목적지를 추가했다. 총 목적지는 8개다.
