@@ -1,0 +1,16 @@
+---
+import '../styles/global.css';
+const { title, description, canonical = Astro.url.pathname, type = 'website' } = Astro.props;
+const canonicalUrl = new URL(canonical, Astro.site ?? Astro.url).toString();
+---
+<!doctype html>
+<html lang="ko">
+  <style>.skip-link{position:absolute;left:-9999px;z-index:10;padding:10px;background:var(--paper);color:var(--ink)}.skip-link:focus{left:20px;top:20px}</style>
+  <head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width" /><link rel="icon" href="/favicon.svg" /><link rel="canonical" href={canonicalUrl} /><meta name="description" content={description} /><meta property="og:type" content={type} /><meta property="og:title" content={title} /><meta property="og:description" content={description} /><meta property="og:url" content={canonicalUrl} /><title>{title}</title><script is:inline type="application/ld+json" set:html={JSON.stringify({ '@context':'https://schema.org', '@type':'WebSite', name:'EMFLS Travel', url:'https://travel.emfls.com' })}></script></head>
+  <body>
+    <a class="skip-link" href="#main-content">본문으로 바로가기</a>
+    <header class="site-header"><a class="wordmark" href="/" aria-label="EMFLS Travel 홈">EMFLS <span>TRAVEL</span></a><nav aria-label="주요 메뉴"><a href="/domestic/">국내</a><a href="/overseas/">해외</a><a href="/family/">가족여행</a><a href="/with-kids/">아이와</a><a href="/road-trip/">자동차</a><a href="/packing/">준비</a></nav><a class="header-link" href="/about/">ABOUT ↗</a></header>
+    <main id="main-content"><slot /></main>
+    <footer class="site-footer"><div><p class="footer-mark">EMFLS TRAVEL</p><p>어디로 갈지부터 어떻게 준비할지까지.<br />여행의 다음 장면을 찾는 편집실.</p></div><div class="footer-links"><a href="/destinations/">Destinations</a><a href="/contact/">Contact</a><a href="/editorial-policy/">Editorial Policy</a><a href="/privacy/">Privacy</a><a href="/about/">About</a></div><p class="copyright">© 2026 EMFLS Travel</p></footer>
+  </body>
+</html>

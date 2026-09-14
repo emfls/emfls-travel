@@ -1,0 +1,4 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'; import DestinationCard from '../../components/DestinationCard.astro'; import { destinations } from '../../data/destinations';
+---
+<BaseLayout title="국내 목적지 탐색 — EMFLS Travel" description="중부권 여행 목적지 8곳을 여행 성격과 조건별로 살펴보는 EMFLS Travel 목적지 인덱스." canonical="/destinations/"><section class="page-intro"><p class="eyebrow">Destination index · central region</p><h1>목적지를<br />고르는 법.</h1><p class="lead">지역명을 저장하는 데서 멈추지 않고, 누구와 어떤 속도로 여행할지에 맞춰 목적지를 살펴보세요.</p></section><section class="section"><div class="section-head"><h2>중부권 여행<br />탐색</h2><p>현재는 8개 목적지를 운영합니다. 각 지역은 여행자와 계절, 이동 방식이 다른 하나의 여행 허브입니다.</p></div><div class="destination-grid">{destinations.map((destination)=><DestinationCard destination={destination} />)}</div></section></BaseLayout>

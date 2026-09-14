@@ -1,0 +1,4 @@
+---
+const { kicker, title, description, accent } = Astro.props;
+---
+<section class="page-intro"><p class="eyebrow">{kicker}</p><h1>{title}</h1><p class="lead">{description}</p>{accent && <p class="accent-note">{accent}</p>}</section>
