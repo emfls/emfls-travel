@@ -76,7 +76,19 @@
 
 ## P7 후보
 
-- Search Console 등록 및 sitemap 제출
-- 공식 출처를 확인한 장소 정보 연결
-- 라이선스 확인된 실제 이미지 적용
-- 실사용 데이터 기반 목적지·가이드 확장
+## P7 — 검색엔진·신뢰성·AdSense 신청 직전 QA
+
+- [x] Production 상태와 `travel.emfls.com` HTTPS 재확인
+- [x] 목적지 8개에 검증된 공식 출처 연결
+- [x] 변동 정보·허위 신뢰 신호·무단 이미지·중복 콘텐츠 재검토
+- [x] robots.txt, sitemap.xml, canonical, metadata, 내부 링크 QA
+- [x] About / Privacy / Contact / Editorial Policy 신뢰 페이지 확인
+- [x] `CONTENT_QA.md`, `TASKS.md`, `PROJECT_HISTORY.md` 갱신
+- [ ] Search Console 소유권 등록 및 sitemap 제출 — 사용자 직접 작업
+- [ ] AdSense 사이트 추가·Publisher ID 발급·심사 신청 — 사용자 직접 작업
+
+## P8 후보
+
+- 라이선스 확인된 실제 이미지와 출처·alt 적용
+- 검색 성과와 실제 이용 데이터에 근거한 콘텐츠 개선
+- 목적지별 공식 장소 출처를 세부 가이드까지 확장

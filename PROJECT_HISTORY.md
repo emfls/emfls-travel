@@ -95,3 +95,12 @@
 - 정적 산출물에서 Trip Finder의 5개 fieldset, native radio controls, submit/reset 버튼, `aria-live` 결과 영역, 충주·단양 상세 링크 및 번들된 클라이언트 스크립트를 확인했다.
 - 브라우저에서 시나리오 A/B/C 제출, 조건 변경, 초기화, 콘솔 오류, 실제 모바일 viewport 동작은 서버 연결 실패로 수행하지 못했다. 따라서 이번 검증에서는 앱 코드 수정이 없으며, 브라우저 동작을 통과했다고 주장하지 않는다.
 - 코드 재검토 결과 추천 규칙은 핵심 동행자·목적 3점, 보조 여행 시간·스타일·이동 2점, `any` wildcard, 점수 내림차순 후 한글 목적지명 tie-break로 유지된다.
+
+## 2026-09-15 — P7 검색엔진·공식 출처·AdSense 신청 직전 QA
+
+- 작업 범위는 현재 `emfls-travel` 저장소와 `travel.emfls.com`으로 한정했다. 다른 Repo, Cloudflare 프로젝트, 도메인, Search Console, AdSense에는 변경을 가하지 않았다.
+- 공식 출처 정책에 따라 지방자치단체 공식 관광·시정 안내를 확인해 충주, 단양, 제천, 원주, 영월, 문경, 괴산, 안동 등 8개 목적지에 연결했다. 안동 관광 포털은 자동 검증에서 403이어서 검증된 안동시 공식 홈페이지를 사용했다.
+- 출처 데이터는 `src/data/sources.ts`로 목적지 콘텐츠와 분리했다. `/destinations/[slug]/`는 목적지별 공식·공공 출처 섹션을 공통 렌더링하며, 외부 링크는 새 탭과 `noopener noreferrer`를 사용한다. 향후 지역이 늘어날 때도 slug별 배열만 추가하면 된다.
+- 사실성 재검토에서 운영시간·요금·주차비·행사 등 변동 수치를 새로 단정하지 않았고, 허위 리뷰·평점·저자·구조화 데이터와 라이선스 미확인 이미지는 추가하지 않았다.
+- Production의 주요 URL, 404, canonical, title/description/OG, robots, sitemap, 내부 링크와 37페이지 생성을 재확인했다. robots는 색인을 허용하고 sitemap은 `https://travel.emfls.com/sitemap.xml`을 가리킨다. 현재 목적지 8개와 가이드 12개는 유지한다.
+- Search Console 소유권 인증·sitemap 제출, AdSense 사이트 추가·Publisher ID 발급·심사 신청은 실제 수행하지 않았으며 사용자 액션으로 남겼다. P7 판정은 구조적 blocker가 없는 `READY WITH MINOR ISSUES`로 기록한다. 실제 사진 에셋과 더 넓은 브라우저 매트릭스는 P8 후보가 아니라 후속 개선 큐다.

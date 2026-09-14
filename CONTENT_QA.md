@@ -65,3 +65,36 @@ READY WITH MINOR ISSUES — 사이트 구조·신뢰 페이지·콘텐츠 구분
 - PASS: 375px viewport showed no horizontal overflow (`scrollWidth` did not exceed viewport width).
 - NOTE: one automated internal-link scan match was Cloudflare's expected `/cdn-cgi/l/email-protection/` email obfuscation path, not a broken site link.
 - NEEDS_FUTURE_WORK: Search Console, official source citations, licensed photographs and broader device/browser matrix remain outside P6.
+
+## P7 Search / AdSense Pre-submission QA
+
+### Production status
+
+- PASS: `https://travel.emfls.com`와 `https://emfls-travel.pages.dev`를 HTTPS로 재확인했다. 현재 목적지 8개, 세부 가이드 12개, 정적 페이지 37개를 유지한다.
+- PASS: 홈, 목적지 인덱스, 대표 목적지, 세부 가이드, 신뢰 페이지, 404가 Production에서 예상 상태로 응답한다.
+
+### Sources
+
+- PASS: 8개 목적지에 지방자치단체 공식 관광·시정 안내 출처를 연결했다. 충주, 단양, 제천, 원주, 영월, 문경, 괴산, 안동의 URL은 실제 응답을 확인했다.
+- NOTE: 안동 관광 포털은 자동 확인에서 403을 반환해 검증된 안동시 공식 홈페이지로 연결했다. 출처 URL을 추측해 만들지 않았다.
+- PASS: 운영시간, 요금, 행사, 주차비와 같은 변동 수치를 새로 단정하지 않고 방문 전 공식 안내를 확인하도록 유지했다.
+
+### Search index readiness
+
+- PASS: robots.txt는 크롤링을 허용하고 `https://travel.emfls.com/sitemap.xml`을 선언한다.
+- PASS: sitemap.xml은 현재 36개 색인 대상 URL을 포함하며 localhost, pages.dev, 다른 프로젝트 URL이 없다. 404는 sitemap에 넣지 않는다.
+- PASS: 주요 HTML의 title, description, canonical, Open Graph가 Production 도메인을 기준으로 생성되고 noindex를 사용하지 않는다.
+- PENDING: Search Console 소유권 인증과 sitemap 제출은 아직 수행하지 않았다.
+
+### Trust and AdSense readiness
+
+- PASS: About, Privacy, Contact, Editorial Policy가 공통 탐색에서 접근 가능하고 허위 저자·리뷰·평점·조직 정보가 없다.
+- PASS: 목적지·가이드는 단순 장소 나열이 아닌 여행 조건, 일정, 이동, 준비 관점으로 구성되어 있다.
+- PASS: 외부 이미지 hotlink와 라이선스 미확인 이미지를 추가하지 않았다. 현재 CSS visual treatment가 사용된다.
+- READY WITH MINOR ISSUES: 사이트 추가·Publisher ID 발급·심사 신청 전 구조적 blocker는 없지만, 실제 이미지 에셋과 더 넓은 브라우저 매트릭스는 후속 개선 항목이다.
+
+### Internal links and remaining actions
+
+- PASS: 목적지 허브, 가이드, 카테고리, 신뢰 페이지와 404의 내부 링크를 확인했다. 목적지 출처 링크는 새 탭과 안전한 `rel` 속성을 사용한다.
+- USER ACTION: Search Console에서 `travel.emfls.com` 소유권을 인증한 뒤 `https://travel.emfls.com/sitemap.xml`을 제출하고 대표 URL을 검사한다.
+- USER ACTION: AdSense에서 사이트를 추가하고 실제 Publisher ID를 발급받은 뒤, 필요 시 코드를 적용하고 심사를 요청한다.
