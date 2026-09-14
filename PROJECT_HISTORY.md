@@ -104,3 +104,4 @@
 - 사실성 재검토에서 운영시간·요금·주차비·행사 등 변동 수치를 새로 단정하지 않았고, 허위 리뷰·평점·저자·구조화 데이터와 라이선스 미확인 이미지는 추가하지 않았다.
 - Production의 주요 URL, 404, canonical, title/description/OG, robots, sitemap, 내부 링크와 37페이지 생성을 재확인했다. robots는 색인을 허용하고 sitemap은 `https://travel.emfls.com/sitemap.xml`을 가리킨다. 현재 목적지 8개와 가이드 12개는 유지한다.
 - Search Console 소유권 인증·sitemap 제출, AdSense 사이트 추가·Publisher ID 발급·심사 신청은 실제 수행하지 않았으며 사용자 액션으로 남겼다. P7 판정은 구조적 blocker가 없는 `READY WITH MINOR ISSUES`로 기록한다. 실제 사진 에셋과 더 넓은 브라우저 매트릭스는 P8 후보가 아니라 후속 개선 큐다.
+- Production 브라우저에서 Trip Finder 대표 조건을 다시 제출해 결과·추천 이유·충주/단양을 포함한 상세 링크를 확인했고 console error는 0건이었다. 현재 브라우저의 viewport override 부재로 375px 수치는 P6에서 확인한 결과를 재검증 근거로 유지했다.

@@ -96,5 +96,6 @@ READY WITH MINOR ISSUES — 사이트 구조·신뢰 페이지·콘텐츠 구분
 ### Internal links and remaining actions
 
 - PASS: 목적지 허브, 가이드, 카테고리, 신뢰 페이지와 404의 내부 링크를 확인했다. 목적지 출처 링크는 새 탭과 안전한 `rel` 속성을 사용한다.
+- PASS: Production 브라우저에서 Trip Finder에 아이와·당일·둘 다·자동차·자연을 제출해 결과, 추천 이유, 상세 링크를 확인했고 콘솔 오류는 없었다. P6에서 확인한 375px overflow 없음 결과도 유지한다. 이번 브라우저에는 별도 viewport override 기능이 없어 모바일 수치는 P6 검증을 재사용했다.
 - USER ACTION: Search Console에서 `travel.emfls.com` 소유권을 인증한 뒤 `https://travel.emfls.com/sitemap.xml`을 제출하고 대표 URL을 검사한다.
 - USER ACTION: AdSense에서 사이트를 추가하고 실제 Publisher ID를 발급받은 뒤, 필요 시 코드를 적용하고 심사를 요청한다.
