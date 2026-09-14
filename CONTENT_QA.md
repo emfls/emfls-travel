@@ -54,3 +54,14 @@ READY WITH MINOR ISSUES — 사이트 구조·신뢰 페이지·콘텐츠 구분
 - 장소별 공식 출처를 조사해 링크하는 작업은 아직 하지 않았다.
 - 실제 배포 환경의 canonical, robots, sitemap 응답은 배포 후 재확인해야 한다.
 - 브라우저 기반 시각·콘솔 검증은 별도 환경에서 필요하다.
+
+## P6 Production Verification
+
+- PASS: Cloudflare Pages production deployment completed from `main` commit `584c89e`.
+- PASS: `emfls-travel.pages.dev` and `travel.emfls.com` served over HTTPS.
+- PASS: 12 requested production URLs returned expected status; sitemap URLs 36/36 returned 200 and unknown URL returned 404.
+- PASS: Home, destination, guide, editorial policy, trust pages, sitemap and robots metadata were checked on `travel.emfls.com`.
+- PASS: Trip Finder browser scenarios A/B/C produced ordered result cards with reasons and links; reset cleared checked controls and results.
+- PASS: 375px viewport showed no horizontal overflow (`scrollWidth` did not exceed viewport width).
+- NOTE: one automated internal-link scan match was Cloudflare's expected `/cdn-cgi/l/email-protection/` email obfuscation path, not a broken site link.
+- NEEDS_FUTURE_WORK: Search Console, official source citations, licensed photographs and broader device/browser matrix remain outside P6.

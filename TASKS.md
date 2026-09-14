@@ -70,6 +70,13 @@
 - [x] `emfls/emfls-travel` 원격 확인 및 main 초기 commit/push
 - [x] Cloudflare Pages 프로젝트 `emfls-travel` 생성 — `npm run build` / `dist` / `main`
 - [x] `travel.emfls.com` custom domain 항목 및 CNAME 설정 요청
-- [ ] GitHub 연동 승인 후 Production deployment 생성
-- [ ] 실도메인 URL·404·Trip Finder·모바일 브라우저 검증
-- [ ] 배포 완료 후 production canonical·sitemap·robots 검증
+- [x] GitHub 연동 승인 후 Production deployment 생성
+- [x] 실도메인 URL·404·Trip Finder·모바일 브라우저 검증
+- [x] 배포 완료 후 production canonical·sitemap·robots 검증
+
+## P7 후보
+
+- Search Console 등록 및 sitemap 제출
+- 공식 출처를 확인한 장소 정보 연결
+- 라이선스 확인된 실제 이미지 적용
+- 실사용 데이터 기반 목적지·가이드 확장

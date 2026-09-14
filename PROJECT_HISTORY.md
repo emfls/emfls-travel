@@ -53,6 +53,17 @@
 - `travel.emfls.com`을 해당 Pages 프로젝트에 추가했고, Cloudflare DNS zone `emfls.com`에 `travel` CNAME → `emfls-travel.pages.dev`를 추가했다. Pages 도메인 검증은 현재 `pending`이며 “CNAME record not set” 상태다.
 - P6의 실도메인 URL, 404, Trip Finder, 모바일, production metadata 검증은 deployment가 생성되고 custom domain 인증이 완료된 뒤 수행해야 한다. AdSense 신청, Search Console 등록, 신규 콘텐츠와 P7 작업은 시작하지 않았다.
 
+## 2026-09-14 — P6 Production 배포 및 실도메인 검증 완료
+
+- GitHub에서 `Cloudflare Workers and Pages` 앱의 `emfls/emfls-travel` 접근 권한을 승인한 뒤, Cloudflare Pages가 GitHub source와 `main` production branch를 인식하는 것을 확인했다.
+- `584c89e` commit으로 Production deployment를 생성했다. Cloudflare build는 `npm run build`로 실행되어 37페이지를 생성했고, 배포 상태는 active/success였다.
+- `emfls-travel.pages.dev`와 `travel.emfls.com`을 HTTPS로 확인했다. 주요 URL 11개는 200, 존재하지 않는 URL은 404였으며 404 화면에서 Home·Destinations 링크를 확인했다.
+- `travel.emfls.com`에서 canonical, title, description, OG title, `lang=ko`를 홈·목적지·가이드·신뢰 페이지 기준으로 확인했다. canonical은 모두 `https://travel.emfls.com`을 사용했다.
+- Production sitemap은 36개 URL을 포함하고 전부 200으로 응답했으며 다른 프로젝트·localhost·pages.dev URL은 없었다. robots.txt는 Travel sitemap을 가리키고 사이트 접근을 차단하지 않았다.
+- Trip Finder 실제 브라우저에서 A(아이와/당일/둘 다/자동차/자연), B(가족/1박 2일/야외/자동차/드라이브), C(혼자/2박 이상/실내/대중교통/휴식)를 실행했다. 결과 카드·추천 이유·상세 링크·점수순 결과·fallback 성격의 가까운 추천·초기화를 확인했다.
+- 375px viewport에서 horizontal overflow가 없었고 홈 화면을 screenshot으로 확인했다. 사이트 탭의 console error는 없었으며 대시보드에서 발생한 Cloudflare UI 접근성 로그는 Travel 사이트 로그가 아니었다.
+- 이번 P6에서는 다른 프로젝트·도메인, AdSense, Search Console, 신규 콘텐츠를 수정하지 않았다. 판정은 `PRODUCTION READY WITH MINOR ISSUES`다. 남은 이슈는 공식 출처·라이선스 이미지·Search Console과 더 넓은 브라우저 매트릭스이며 P7 후보로 남겼다.
+
 ## 2026-09-14 — P3 국내 목적지 클러스터 확장
 
 - 기존 충주·단양을 유지하고 제천(`jecheon`), 원주(`wonju`), 영월(`yeongwol`), 문경(`mungyeong`), 괴산(`goesan`), 안동(`andong`) 정확히 6개 목적지를 추가했다. 총 목적지는 8개다.
