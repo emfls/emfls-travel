@@ -99,3 +99,13 @@ READY WITH MINOR ISSUES — 사이트 구조·신뢰 페이지·콘텐츠 구분
 - PASS: Production 브라우저에서 Trip Finder에 아이와·당일·둘 다·자동차·자연을 제출해 결과, 추천 이유, 상세 링크를 확인했고 콘솔 오류는 없었다. P6에서 확인한 375px overflow 없음 결과도 유지한다. 이번 브라우저에는 별도 viewport override 기능이 없어 모바일 수치는 P6 검증을 재사용했다.
 - USER ACTION: Search Console에서 `travel.emfls.com` 소유권을 인증한 뒤 `https://travel.emfls.com/sitemap.xml`을 제출하고 대표 URL을 검사한다.
 - USER ACTION: AdSense에서 사이트를 추가하고 실제 Publisher ID를 발급받은 뒤, 필요 시 코드를 적용하고 심사를 요청한다.
+
+## Network Baseline v1 QA
+
+- PASS: `astro.config.mjs`에 `trailingSlash: 'always'`를 명시했고 sitemap·canonical·내부 링크가 trailing slash URL을 사용한다.
+- FIXED: GA4가 `https://travel.emfls.com`에서만 runtime으로 실행되도록 제한했다. localhost, 127.0.0.1, pages.dev, workers.dev, preview 환경에는 loader를 삽입하지 않는다.
+- FIXED: 공통 head에 `theme-color`, `og:image`, Twitter card/title/description/image, `noindex`, JSON-LD override 기본값을 추가했다.
+- FIXED: 외부 사진 없이 Travel 전용 1200×630 브랜드 SVG OG asset을 추가했다.
+- PASS: WebSite JSON-LD만 기본 제공하며 실제 화면에 없는 Review, AggregateRating, Person, Organization 정보는 넣지 않는다.
+- PASS: Editorial Policy에 출처·변경 정보·업데이트·AI 검토·이미지 권리·광고 구분 원칙이 반영되어 있다.
+- FUTURE WORK: Network QA 자동화, 라이선스 확인 사진, AdSense 실제 적용 검토.
