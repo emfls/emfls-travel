@@ -115,3 +115,9 @@
 - [x] Production 홈·목적지 상세 모바일 시각 QA
 - [x] 375px 모바일 Hero·목적지 제목 개행 및 여백 보정
 - [x] check/build 및 Production 재배포·재검증
+
+## 이미지 자산
+
+- [x] Travel 전용 Home Hero 이미지 생성·적용
+- [x] 목적지 8개 이미지 생성·Destination Card 및 Detail Hero 적용
+- [x] 이미지 alt·responsive crop·로컬 자산 정책 반영

@@ -138,3 +138,9 @@
 - 375px에서 홈 Hero 한글 제목과 목적지/가이드 대형 제목이 글자 폭에 비해 커 일부 개행이 부자연스러울 수 있어, 480px 이하에만 제목 크기·행간과 Hero/section 하단 여백을 조정했다. Travel의 editorial grid, 색상, 기능, SEO 구조는 유지했다.
 - 외부 이미지나 신규 콘텐츠는 추가하지 않았다. 추상 CSS visual은 사진 에셋이 없는 현재 정책에 따라 유지했다.
 - `npm run check` 0 errors/0 warnings/0 hints, `npm run build` 37 pages 성공. commit `b179cf4`를 `main`에 push했고 Cloudflare Pages Production deployment `368358f8`가 성공했다. Production 홈에서 모바일 제목 개행과 비주얼을 재확인했다.
+
+## 2026-09-15 — Travel 전용 이미지 자산
+
+- Home Hero와 현재 목적지 8개(충주, 단양, 제천, 원주, 영월, 문경, 괴산, 안동)의 Travel 전용 생성 raster 이미지를 `public/images/`에 저장했다. 외부 이미지·hotlink·무단 사진은 사용하지 않았다.
+- 목적지 slug 기반 경로를 사용해 Destination Card와 목적지 상세 Hero가 동일한 로컬 자산을 공유하도록 연결했다. 기존 CSS 추상 비주얼·Trip Finder 로직·SEO head 구조는 유지하고, 이미지에는 목적지별 descriptive alt를 적용했다.
+- `object-fit: cover` 기반 crop으로 375px·중간 폭·데스크톱에서 비율을 유지하도록 했다. 이미지가 없는 가이드 12개에는 별도 이미지를 억지로 추가하지 않았다.

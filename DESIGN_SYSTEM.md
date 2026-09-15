@@ -35,3 +35,5 @@
 ## Forbidden patterns
 
 SaaS 대시보드형 사이드바, 과도한 배지·통계, 가짜 평점·리뷰, 광고 우선 레이아웃, 이미지가 없으면 무너지는 고정 배경, 대량 자동 생성 SEO 페이지를 금지한다.
+
+Travel 전용 raster 이미지 자산은 프로젝트의 `public/images/`에서 직접 관리한다. 외부 URL, hotlink, 라이선스 불명 이미지는 사용하지 않는다. 현재 생성 이미지는 Hero·목적지 카드·목적지 상세 Hero에서 공유하며, `object-fit: cover`와 명시적 alt로 반응형 crop을 제어한다.

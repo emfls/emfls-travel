@@ -1,5 +1,6 @@
 ---
 import type { Destination } from '../data/destinations';
 const { destination } = Astro.props as { destination: Destination };
+const image = `/images/destinations/${destination.slug}.png`;
 ---
-<a class={`destination-card ${destination.visual}`} href={`/destinations/${destination.slug}/`}><span class="destination-art" role="img" aria-label={`${destination.name}를 상징하는 추상 그래픽`}></span><span class="destination-card-copy"><small>{destination.region}</small><h3>{destination.name}</h3><p>{destination.shortDescription}</p><span class="tag-row">{destination.bestFor.slice(0, 3).map((tag) => <span>{tag}</span>)}</span><strong>여행 허브 열기 ↗</strong></span></a>
+<a class={`destination-card ${destination.visual}`} href={`/destinations/${destination.slug}/`}><span class="destination-art"><img src={image} alt={`${destination.name}의 여행 풍경`} loading="lazy" /></span><span class="destination-card-copy"><small>{destination.region}</small><h3>{destination.name}</h3><p>{destination.shortDescription}</p><span class="tag-row">{destination.bestFor.slice(0, 3).map((tag) => <span>{tag}</span>)}</span><strong>여행 허브 열기 ↗</strong></span></a>
