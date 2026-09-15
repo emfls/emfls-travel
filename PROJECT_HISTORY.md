@@ -130,3 +130,4 @@
 - 정적 `.html` 파일은 `trailingSlash: 'always'`의 일반 페이지 라우팅 대상이 아니므로 정확한 `.html` URL에서 직접 200을 반환해야 한다. root의 기존 파일은 삭제해 중복 경로를 제거했다.
 - Cloudflare Pages의 기본 clean URL 동작이 `.html` 요청을 확장자 없는 경로로 308 redirect하는 것을 Production에서 확인했다. 따라서 원본 `public/*.html`과 build 산출물은 보존하면서, 동일 인증 문자열의 확장자 없는 companion asset과 해당 `.html` 요청을 내부 200 proxy하는 `public/_redirects` 예외를 추가했다. 이 예외는 일반 페이지의 trailing-slash 정책을 변경하지 않는다.
 - 최종 commit `e279144`의 Cloudflare Pages Production deployment `dc3c4987-09bc-42d9-bfc7-e0b92258ebd7`가 성공했고, `https://travel.emfls.com/naver6dde13e69fe8ec25cd17e085c65c2124.html`은 redirect 없이 HTTP 200을 반환했다. Production 응답 본문은 원본 파일과 byte 단위로 일치했다.
+- 2026-09-15 새 네이버 인증 파일 `naverb85a8c77c2986b53c64c82e412c3c88c.html`로 교체했다. 이전 인증 파일과 companion asset은 제거하고, 새 파일을 `public/`에 배치했으며 `_redirects` 대상도 새 파일명으로 갱신했다. 원본 파일의 내용과 `dist/` 산출물은 byte 단위로 일치한다.
