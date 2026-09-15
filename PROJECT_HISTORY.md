@@ -122,3 +122,9 @@
 - Editorial Policy에 AI 검토, 이미지 권리·출처, 광고와 콘텐츠 구분 원칙을 보강했다. AdSense loader·slot·신청은 추가하지 않았다.
 - 재사용 문서로 `CONTENT_POLICY.md`, `LAUNCH_CHECKLIST.md`, `REPOSITORY_CONNECTION.md`를 추가했다. README.md는 현재 없지만 빈 껍데기로 만들지 않았다.
 - 후속 작업은 Network QA 자동화, 라이선스 확인 사진, AdSense 실제 적용 검토로 남겼다. 신규 목적지·가이드·검색·지도·P8 작업은 시작하지 않았다.
+
+## 2026-09-15 — 네이버 사이트 소유권 파일 배치 수정
+
+- 원인: 네이버 인증 파일이 저장소 root에만 있어 Git에는 포함됐지만 Astro의 정적 웹 루트가 아니었다. 따라서 Cloudflare Pages `dist/`에 복사되지 않아 `/naver6dde13e69fe8ec25cd17e085c65c2124.html` 요청이 404가 되었다.
+- 해결: 원본 파일명과 인증 문자열을 변경하지 않고 `public/naver6dde13e69fe8ec25cd17e085c65c2124.html`로 이동했다. Astro build 후 `dist/naver6dde13e69fe8ec25cd17e085c65c2124.html` 생성 및 public/dist 내용 byte 비교가 일치했다.
+- 정적 `.html` 파일은 `trailingSlash: 'always'`의 일반 페이지 라우팅 대상이 아니므로 정확한 `.html` URL에서 직접 200을 반환해야 한다. root의 기존 파일은 삭제해 중복 경로를 제거했다.
