@@ -131,3 +131,10 @@
 - Cloudflare Pages의 기본 clean URL 동작이 `.html` 요청을 확장자 없는 경로로 308 redirect하는 것을 Production에서 확인했다. 따라서 원본 `public/*.html`과 build 산출물은 보존하면서, 동일 인증 문자열의 확장자 없는 companion asset과 해당 `.html` 요청을 내부 200 proxy하는 `public/_redirects` 예외를 추가했다. 이 예외는 일반 페이지의 trailing-slash 정책을 변경하지 않는다.
 - 최종 commit `e279144`의 Cloudflare Pages Production deployment `dc3c4987-09bc-42d9-bfc7-e0b92258ebd7`가 성공했고, `https://travel.emfls.com/naver6dde13e69fe8ec25cd17e085c65c2124.html`은 redirect 없이 HTTP 200을 반환했다. Production 응답 본문은 원본 파일과 byte 단위로 일치했다.
 - 2026-09-15 새 네이버 인증 파일 `naverb85a8c77c2986b53c64c82e412c3c88c.html`로 교체했다. 이전 인증 파일과 companion asset은 제거하고, 새 파일을 `public/`에 배치했으며 `_redirects` 대상도 새 파일명으로 갱신했다. 원본 파일의 내용과 `dist/` 산출물은 byte 단위로 일치한다.
+
+## 2026-09-15 — Production 전체 디자인 QA
+
+- Production 홈과 충주 목적지 상세를 375px 모바일 viewport에서 실제 캡처·검토했다. 공통 헤더/네비게이션, Hero, Trip Finder native controls, 목적지 카드·추상 비주얼, 일정/체크리스트/관련 링크, Footer와 접근성 구조를 확인했다.
+- 375px에서 홈 Hero 한글 제목과 목적지/가이드 대형 제목이 글자 폭에 비해 커 일부 개행이 부자연스러울 수 있어, 480px 이하에만 제목 크기·행간과 Hero/section 하단 여백을 조정했다. Travel의 editorial grid, 색상, 기능, SEO 구조는 유지했다.
+- 외부 이미지나 신규 콘텐츠는 추가하지 않았다. 추상 CSS visual은 사진 에셋이 없는 현재 정책에 따라 유지했다.
+- `npm run check` 0 errors/0 warnings/0 hints, `npm run build` 37 pages 성공. commit `b179cf4`를 `main`에 push했고 Cloudflare Pages Production deployment `368358f8`가 성공했다. Production 홈에서 모바일 제목 개행과 비주얼을 재확인했다.

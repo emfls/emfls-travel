@@ -109,3 +109,9 @@
 
 - [x] Google Analytics 4 연결 — `G-5K42PS7SNT`
 - [ ] Google Analytics 관리자 화면에서 실시간 수집 확인
+
+## 디자인 QA
+
+- [x] Production 홈·목적지 상세 모바일 시각 QA
+- [x] 375px 모바일 Hero·목적지 제목 개행 및 여백 보정
+- [x] check/build 및 Production 재배포·재검증
