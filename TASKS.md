@@ -93,6 +93,18 @@
 - 검색 성과와 실제 이용 데이터에 근거한 콘텐츠 개선
 - 목적지별 공식 장소 출처를 세부 가이드까지 확장
 
+## Network Baseline v1
+
+- [x] sitemap 단일 urlset 및 trailing slash 정책 확인
+- [x] GA4 `G-5K42PS7SNT` Production custom-domain 조건 적용
+- [x] 공통 SEO head contract와 Twitter metadata 보강
+- [x] Travel 전용 기본 OG asset 추가
+- [x] JSON-LD 및 trust/accessibility baseline 점검
+- [x] CONTENT_POLICY / LAUNCH_CHECKLIST / REPOSITORY_CONNECTION 추가
+- [ ] Network QA 자동화 연결
+- [ ] 라이선스 확인된 실제 여행 사진 적용
+- [ ] AdSense 실제 적용 검토
+
 ## 운영
 
 - [x] Google Analytics 4 연결 — `G-5K42PS7SNT`

@@ -112,3 +112,13 @@
 - `gtag('config', 'G-5K42PS7SNT')`의 기본 page view 수집만 활성화했으며, Trip Finder 입력값·선택 조건 custom event와 Google Tag Manager는 추가하지 않았다.
 - Privacy 페이지에 GA4의 페이지 조회 중심 분석 사용 사실과 Measurement ID를 반영했다.
 - 실제 Google Analytics 관리자 화면의 실시간 수집 여부는 접근·확인하지 않았으며, 코드 및 Production HTML에서만 검증한다.
+
+## 2026-09-15 — EMFLS Network Baseline v1 정합성 점검
+
+- 이미 충족: Astro static output, Production site URL, 단일 sitemap urlset, robots, trailing-slash 형태의 canonical/internal link, favicon, WebSite JSON-LD, trust pages, skip link, native Trip Finder controls, CSS visual/image policy.
+- `astro.config.mjs`에 `trailingSlash: 'always'`를 명시했다. sitemap은 기존처럼 단일 `/sitemap.xml`과 production URL만 생성하며 404/noindex URL을 포함하지 않는다.
+- GA4는 `https://travel.emfls.com`의 HTTPS custom domain에서만 실행하도록 공통 레이아웃의 runtime 조건을 바꿨다. localhost, 127.0.0.1, pages.dev, workers.dev, preview 및 개발 환경에서는 Google script를 삽입하지 않는다. Measurement ID와 기본 page_view 방식은 유지하고 custom event/GTM은 추가하지 않았다.
+- BaseLayout metadata contract에 `noindex`, `og:image`, Twitter card/title/description/image, `theme-color`, `jsonLd` override를 추가하고 Travel 전용 1200×630 브랜드 SVG OG asset을 `public/og/travel-og.svg`로 만들었다. 기존 WebSite JSON-LD default와 실제 화면에 없는 Review/Rating/Person schema 금지 원칙은 유지한다.
+- Editorial Policy에 AI 검토, 이미지 권리·출처, 광고와 콘텐츠 구분 원칙을 보강했다. AdSense loader·slot·신청은 추가하지 않았다.
+- 재사용 문서로 `CONTENT_POLICY.md`, `LAUNCH_CHECKLIST.md`, `REPOSITORY_CONNECTION.md`를 추가했다. README.md는 현재 없지만 빈 껍데기로 만들지 않았다.
+- 후속 작업은 Network QA 자동화, 라이선스 확인 사진, AdSense 실제 적용 검토로 남겼다. 신규 목적지·가이드·검색·지도·P8 작업은 시작하지 않았다.

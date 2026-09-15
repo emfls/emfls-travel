@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">EMFLS Travel</title>
+  <desc id="desc">A destination magazine for finding the next journey.</desc>
+  <rect width="1200" height="630" fill="#f6f3ed"/>
+  <path d="M0 505C170 430 260 565 440 485S730 435 840 510s210 36 360-55v175H0Z" fill="#dce6d7"/>
+  <path d="M0 560c170-100 300-45 450-105s270-20 390 40 230 58 360-20" fill="none" stroke="#e56b3f" stroke-width="8"/>
+  <path d="M80 110h1040M80 140h430" stroke="#1f2925" stroke-width="2" opacity=".18"/>
+  <text x="80" y="250" fill="#e56b3f" font-family="Arial,sans-serif" font-size="22" font-weight="700" letter-spacing="5">A MAGAZINE FOR GOING SOMEWHERE</text>
+  <text x="76" y="370" fill="#1f2925" font-family="Georgia,serif" font-size="105" letter-spacing="-5">EMFLS TRAVEL</text>
+  <text x="84" y="425" fill="#65706a" font-family="Arial,sans-serif" font-size="24">여행의 다음 장면을 찾는 편집실</text>
+  <circle cx="1000" cy="220" r="74" fill="#adc2cf" opacity=".8"/><circle cx="1030" cy="260" r="42" fill="#e2a46c" opacity=".9"/>
+</svg>
