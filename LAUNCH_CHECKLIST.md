@@ -38,5 +38,8 @@
 
 ### Branch-only implementation checkpoint
 - [x] Add one lowercase 32-hex IndexNow root key file under public/ and a regression test that checks unique filename/body match.
+- [x] Cloudflare Preview f8fe6e0e succeeded from da5fc06579c5ae88feef95c78e8f07ad87e1a757. Home/robots/sitemap/key/Naver verifier returned 200; unique unknown path returned 404.
+- [x] Preview home loaded in browser and the current-viewport screenshot/accessibility view passed. No fixed 1440/390 matrix is claimed; direct HTTP verified the key body after the browser blocked the raw .txt navigation.
+- [ ] GitHub PR creation returned 403 Resource not accessible by integration; no PR exists. Keep main and Production unchanged.
 - [ ] Production key URL and actual IndexNow submission remain pending; no POST has been sent.
 - [ ] Keep Search Launch NOT_READY until current owner registrations/submissions and production IndexNow result are evidenced.
